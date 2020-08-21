@@ -1,0 +1,35 @@
+<view class="like-list">
+  <view class="ll-title-wrap">
+    <image 
+      class="ll-title-image" 
+      mode="widthFix" 
+      src="images/like.png"></image>
+  </view>
+  <view class="ll-list" wx:if="{{ likeList }}">
+    <view
+      class="ll-item"
+      wx:for="{{ likeList }}"
+      wx:key="id"
+      data-type="{{ item.type }}"
+      data-index="{{ item.id }}"
+      bind:tap="onNavigator">
+      <view class="ll-item-meta">
+        <view class="ll-item-type">{{ typeMap[item.type] }}</view>
+        <view class="ll-item-like">
+          <image mode="widthFix" class="lli-like-icon" src="images/like-icon.png"></image>
+          <text class="lli-like-count">{{ item.fav_nums }}</text> 
+        </view>
+      </view>
+      <view class="ll-item-cover">
+        <view class="lli-cover-wrap">
+          <image 
+            class="lli-cover"
+            mode="widthFix"
+            lazy-load="true"
+            src="{{ item.image }}"></image>
+        </view>
+      </view>
+      <view class="ll-item-content">{{ item.content }}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="detail-header container">
+  <view class="detail-header-cover-wrap">
+    <image
+      mode="widthFix" 
+      class="detail-header-cover"
+      src="{{ bookData.image }}"></image>
+  </view>
+  <view class="detail-header-title">{{ bookData.title }}</view>
+  <view class="detail-header-author">{{ bookData.author }}</view>
+</view>

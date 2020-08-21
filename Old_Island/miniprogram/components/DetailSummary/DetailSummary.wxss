@@ -1,0 +1,20 @@
+.container {
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+}
+
+.detail-summary-title {
+  text-align: center;
+  color: #2f2f2f;
+  margin-bottom: 30rpx;
+  font-size: 18px;
+}
+
+.detail-summary .detail-summary-content {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+  text-indent: 2em;
+}
+

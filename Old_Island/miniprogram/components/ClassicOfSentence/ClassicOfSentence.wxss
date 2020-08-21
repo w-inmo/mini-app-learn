@@ -1,0 +1,30 @@
+.classic-of-sentence {
+  width: 100%;
+}
+
+.classic-of-sentence .cos-image-wrap {
+  width: 100%;
+  position: relative;
+  font-size: 0;
+}
+
+.cos-image-wrap .cos-image {
+  width: 100%;
+}
+
+.cos-image-wrap .cos-type {
+  width: 40rpx;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  transform: translateY(56%);
+}
+
+.classic-of-sentence .cos-content {
+  margin-top: 120rpx;
+  font-size: 18px;
+  text-align: center;
+  color: #101010;
+}
+
+

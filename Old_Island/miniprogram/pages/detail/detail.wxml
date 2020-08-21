@@ -1,0 +1,7 @@
+<view class="detail" wx:if="{{ bookData }}">
+  <detail-header bookData="{{ bookData }}"></detail-header>
+  <detail-short-comment book-id="{{ bookData.id }}"></detail-short-comment>
+  <detail-summary summary="{{ bookData.summary }}"></detail-summary>
+  <detail-info bookData="{{ bookData }}"></detail-info>
+  <detail-bottombar></detail-bottombar>
+</view>

@@ -1,0 +1,4 @@
+<view class="books">
+  <books-search class="books-search"></books-search>
+  <books-list></books-list>
+</view>

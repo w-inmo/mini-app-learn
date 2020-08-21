@@ -1,0 +1,25 @@
+<view class="search">
+  <view class="search-input-wrap">
+    <view class="si-container">
+      <icon type="search" size="24px" color="#a7a7a7"></icon>
+      <input 
+        auto-focus
+        class="si-container-input" 
+        model:value="{{value}}"
+        bind:confirm="onSearch" 
+        placeholder="书籍名"></input>
+      <icon type="cancel" color="#a7a7a7" bind:tap="onClear"></icon>
+    </view>
+    <view class="si-cancel" bind:tap="onBack">取消</view>
+  </view>
+  <scroll-view
+    scroll-y="true" 
+    class="search-container"
+    bind:scrolltolower="updateBooks">
+    <search-history wx:if="{{ !isShowResult }}"></search-history>
+    <search-result 
+      id="search-result" 
+      wx:else 
+      bookData="{{ bookData.books }}"></search-result>
+  </scroll-view>
+</view>

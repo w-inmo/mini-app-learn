@@ -1,0 +1,15 @@
+<view class="classic-control">
+  <view class="cc-prev" bind:tap="onTapPrev">
+    <image 
+      wx:if="{{ data.index < 8 }}" 
+      class="cc-icon" 
+      src="images/prev.png"></image>
+  </view>
+  <view class="cc-title">{{ data.title }}</view>
+  <view class="cc-next" bind:tap="onTapNext">
+    <image
+      wx:if="{{ data.index > 2 }}"
+      class="cc-icon"
+      src="images/next.png"></image>
+  </view>
+</view>

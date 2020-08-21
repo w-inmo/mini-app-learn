@@ -1,0 +1,27 @@
+<view class="search-result">
+  <navigator
+    class="sr-item" 
+    wx:for="{{ bookData }}" 
+    wx:key="id"
+    url="/pages/detail/detail?id={{ item.id }}">
+    <view class="sr-cover-wrap">
+      <view class="sr-cover-container">
+        <image
+          class="sr-cover"
+          mode="widthFix"
+          src="{{ item.image }}"
+          lazy-load="true"></image>
+      </view>
+    </view>
+    <view class="sr-item-info">
+      <view class="sr-info-title one-line">{{ item.title }}</view>
+      <view class="sr-info-authors one-line">
+        <block
+          wx:for="{{ item.author }}" 
+          wx:for-item="author"
+          wx:for-index="i"
+          wx:key="author">{{ i > 0 ? ', ' : '' }}{{ author }}</block>
+      </view>
+    </view>
+  </navigator>
+</view>

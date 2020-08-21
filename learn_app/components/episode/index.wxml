@@ -1,0 +1,18 @@
+<!--components/episode/index.wxml-->
+<view class="container">
+    <wxs module="prefix">
+        function prefix(value) {
+            return (value < 10 ? '0' + value : value)
+        }
+        module.exports = prefix
+    </wxs>
+    <view class="index-container">
+        <text class="plain">No.</text>
+        <text class="index">{{ prefix(index) }}</text>
+        <view class="line"></view>
+    </view>
+    <view class="date-container">
+        <text class="month">{{ month }}</text>
+        <text class="year">{{ year }}</text>
+    </view>
+</view>

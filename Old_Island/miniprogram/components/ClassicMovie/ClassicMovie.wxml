@@ -1,0 +1,8 @@
+<view class="classic-content">
+  <classic-header data="{{ data }}"></classic-header>
+  <view class="cc-image-wrap">
+    <image mode="widthFix" class="cc-image" src="{{ data.image }}"></image>
+    <image mode="widthFix" class="cc-type" src="images/movie.png"></image>
+  </view>
+  <view class="cc-content">{{ data.content }}</view>
+</view>

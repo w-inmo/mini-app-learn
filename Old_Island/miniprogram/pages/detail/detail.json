@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "detail-short-comment": "../../components/DetailShortComment/DetailShortComment",
+    "detail-info": "../../components/DetailInfo/DetailInfo",
+    "detail-summary": "../../components/DetailSummary/DetailSummary",
+    "detail-header": "../../components/DetailHeader/DetailHeader",
+    "detail-bottombar": "../../components/DetailBottombar/DetailBottombar"
+  }
+}

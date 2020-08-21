@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classic-movie": "../ClassicMovie/ClassicMovie",
+    "classic-of-music": "../ClassicOfMusic/ClassicOfMusic",
+    "classic-of-sentence": "../ClassicOfSentence/ClassicOfSentence",
+    "classic-control": "../ClassicControl/ClassicControl"
+  }
+}

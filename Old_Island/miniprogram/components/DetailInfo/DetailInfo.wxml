@@ -1,0 +1,23 @@
+<view class="detail-info container">
+  <view class="detail-info-title">书本信息</view>
+  <view class="detail-info-cell">
+    <text class="detail-info-name">出版社</text>
+    <text class="detail-info-value">{{ bookData.publisher }}</text>
+  </view>
+  <view class="detail-info-cell">
+    <text class="detail-info-name">出版年</text>
+    <text class="detail-info-value">{{ bookData.pubdate }}</text>
+  </view>
+  <view class="detail-info-cell">
+    <text class="detail-info-name">页数</text>
+    <text class="detail-info-value">{{ bookData.pages }}</text>
+  </view>
+  <view class="detail-info-cell">
+    <text class="detail-info-name">定价</text>
+    <text class="detail-info-value">{{ bookData.price }}</text>
+  </view>
+  <view class="detail-info-cell">
+    <text class="detail-info-name">装订</text>
+    <text class="detail-info-value">{{ bookData.binding }}</text>
+  </view>
+</view>

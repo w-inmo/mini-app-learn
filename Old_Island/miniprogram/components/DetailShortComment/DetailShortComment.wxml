@@ -1,0 +1,10 @@
+<view class="detail-short-comment container">
+  <view class="dsc-title">短评</view>
+  <view class="dsc-list">
+    <view class="dsc-item"
+      wx:for="{{ comments }}"
+      wx:key="content">
+      {{ item.content }} <text class="dsc-item-nums">+{{ item.nums }}</text>
+    </view>
+  </view>
+</view>

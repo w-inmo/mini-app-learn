@@ -1,0 +1,4 @@
+<view class="detail-summary container">
+  <view class="detail-summary-title">内容简介</view>
+  <view class="detail-summary-content" >{{ summary }}</view>
+</view>

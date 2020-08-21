@@ -1,0 +1,14 @@
+<view class="search-history">
+  <view class="sh-search">
+    <view class="sh-title">历史搜索</view>
+    <view class="sh-list">
+      <view class="sh-list-item"></view>
+    </view>
+  </view>
+  <view class="sh-hot">
+    <view class="sh-title">热门搜索</view>
+    <view class="sh-list">
+      <view class="sh-list-item"></view>
+    </view>
+  </view>
+</view>

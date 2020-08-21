@@ -1,0 +1,17 @@
+<view class="like-profile">
+  <image mode="widthFix" class="lp-image" src="images/bg.png"></image>
+  <view class="lp-avatar">
+    <image class="lp-avatar-image" src="images/avatar.jpg"></image>
+    <view class="lp-name">Inmo</view>
+  </view>
+  <view class="lp-content">
+    <view class="lp-content-about">
+      <image class="lp-about-icon" src="images/about.png"></image>
+      <view>关于我们</view>
+    </view>
+    <view class="lp-content-booklist">
+      <view class="lpc-booklist-count">18</view>
+      <view class="lpc-booklist-name">我的书单</view>
+    </view>
+  </view>
+</view>

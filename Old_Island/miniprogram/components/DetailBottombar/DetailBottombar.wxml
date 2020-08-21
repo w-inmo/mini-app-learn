@@ -1,0 +1,37 @@
+<view class="detail-bottombar">
+  <view class="db-input" bind:tap="onComment">
+    <view class="db-input-text">短评：仅做演示，不能输入</view>
+  </view>
+  <view class="db-right">
+    <image mode="widthFix" class="db-right-like" src="images/like.png"></image>
+    <image mode="widthFix" class="db-right-share" src="images/share.png"></image>
+  </view>
+  <view class="db-comment" hidden="{{ hideComment }}">
+    <view class="db-comment-mask"></view>
+    <view class="db-comment-content">
+      <view class="dbc-input-wrap">
+        <input 
+          class="dbc-input" 
+          placeholder-style="#bbb" 
+          bind:focus="onFocus"
+          placeholder="点击标签或者输入短评"></input>
+        <text class="dbc-cancel" bind:tap="onComment">取消</text>
+      </view>
+      <view class="dbc-list">
+        <view class="dbc-item">
+          <text>程序员也有艺术的人生</text>
+          <text class="dbc-item-nums"> +1</text>
+        </view>
+        <view class="dbc-item">
+          <text>inmo 到此一游</text>
+          <text class="dbc-item-nums"> +678</text>
+        </view>
+        <view class="dbc-item">
+          <text>快乐天天</text>
+          <text class="dbc-item-nums"> +3908</text>
+        </view>
+      </view>
+      <view class="dbc-commit">小程序仅供作为课程案例</view>
+    </view>
+  </view>
+</view>

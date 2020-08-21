@@ -1,0 +1,4 @@
+.detail {
+  background-color: #f7f7f7;
+  padding-bottom: calc(28.8rpx + 12px);
+}

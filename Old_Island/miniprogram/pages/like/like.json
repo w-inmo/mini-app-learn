@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "like-profile": "../../components/LikeProfile/LikeProfile",
+    "like-list": "../../components/LikeList/LikeList"
+  }
+}

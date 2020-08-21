@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "classic-movie": "../../components/ClassicMovie/ClassicMovie",
+    "classic-of-music": "../../components/ClassicOfMusic/ClassicOfMusic",
+    "classic-of-sentence": "../../components/ClassicOfSentence/ClassicOfSentence"
+  }
+}

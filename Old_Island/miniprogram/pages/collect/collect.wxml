@@ -1,0 +1,11 @@
+<view class="collect" wx:if="{{ isData }}">
+  <classic-movie
+    wx:if="{{ data.type === 100 }}" 
+    data="{{ data }}"></classic-movie>
+  <classic-of-music
+    wx:elif="{{ data.type === 200 }}"
+    data="{{ data }}"></classic-of-music>
+  <classic-of-sentence 
+    wx:elif="{{ data.type === 300 }}"
+    data="{{ data }}"></classic-of-sentence>
+</view>

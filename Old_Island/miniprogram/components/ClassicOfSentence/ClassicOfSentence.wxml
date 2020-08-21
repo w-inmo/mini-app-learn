@@ -1,0 +1,8 @@
+<view class="classic-of-sentence">
+  <classic-header data="{{ data }}"></classic-header>
+  <view class="cos-image-wrap">
+    <image mode="widthFix" class="cos-image" src="{{ data.image }}"></image>
+    <image mode="widthFix" class="cos-type" src="images/sentence.png"></image>
+  </view>
+  <view class="cos-content">{{ data.content }}</view>
+</view>

@@ -1,0 +1,5 @@
+<view class="container">
+    <image mode="widthFix" class="cover" src="{{ img }}"  />
+    <image mode="widthFix" class="tag" src="images/movie@tag.png"  />
+    <text class="content">{{ content }}</text>
+</view>

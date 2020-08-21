@@ -1,0 +1,32 @@
+.detail-info {
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+}
+
+.detail-info .detail-info-title {
+  text-align: center;
+  color: #2f2f2f;
+  margin-bottom: 30rpx;
+  font-size: 18px;
+}
+
+.detail-info .detail-info-cell {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 20rpx;
+}
+
+.detail-info .detail-info-cell:last-child {
+  margin-bottom: 0;
+}
+
+.detail-info-cell .detail-info-name {
+  display: inline-block;
+  width: 120rpx;
+  color: #999;
+}
+
+.detail-info-cell .detail-info-value {
+  color: #656565;
+}

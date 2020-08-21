@@ -1,0 +1,27 @@
+.classic-content {
+  width: 100%;
+}
+
+.classic-content .cc-image-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.cc-image-wrap .cc-image {
+  width: 100%;
+}
+
+.cc-image-wrap .cc-type {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 40rpx;
+  transform: translate(0, 50%);
+}
+
+.classic-content .cc-content {
+  margin-top: 140rpx;
+  padding: 0 90rpx;
+  font-size: 20px;
+  color: #5a5a5a;
+}

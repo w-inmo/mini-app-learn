@@ -1,0 +1,6 @@
+<view class="books-search">
+  <navigator url="../../pages/search/search" class="bs-input-wrap" bind:tap="onSearch">
+    <icon size="24" color="#9a9a9a" type="search"></icon>
+    <view class="bs-input-text">输入图书名称搜索</view>
+  </navigator>
+</view>

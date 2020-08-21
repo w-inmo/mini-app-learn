@@ -1,0 +1,88 @@
+.like-list {
+  width: 100%;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.like-list .ll-title-wrap {
+  width: 140rpx;
+  margin: 60rpx auto 40rpx;
+  font-size: 0;
+}
+
+.ll-title-wrap .ll-title-image {
+  width: 100%;
+}
+
+.like-list .ll-list {
+  width: 100%;
+}
+
+.ll-list .ll-item {
+  width: 41%;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  float: left;
+}
+
+.ll-list .ll-item:nth-child(odd) {
+  margin: 0 6% 40rpx 6%;
+}
+
+.ll-item .ll-item-meta {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ll-item-meta .ll-item-type {
+  display: inline-block;
+  padding: 6rpx 20rpx;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  color: #181818;
+}
+
+.ll-item-meta .ll-item-like {
+  position: relative;
+  font-size: 0;
+}
+
+.ll-item-like  .lli-like-icon {
+  width: 30rpx;
+}
+
+.ll-item-like .lli-like-count {
+  display: inline-block;
+  font-size: 12px;
+  transform: translateY(-50%);
+  color: #d3d3d3;
+}
+
+.ll-item .ll-item-cover {
+  width: 100%;
+  height: 200rpx;
+}
+
+.ll-item-cover .lli-cover-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lli-cover-wrap .lli-cover {
+  width: 100%;
+}
+
+.ll-item .ll-item-content {
+  height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  margin: 20rpx;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #999;
+}
+

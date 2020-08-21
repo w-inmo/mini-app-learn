@@ -1,0 +1,17 @@
+<view class="classic-of-music">
+  <classic-header data="{{ data }}"></classic-header>
+  <view class="com-control">
+    <image
+      mode="widthFix"
+      class="com-control-cover"
+      src="{{ data.image }}"></image>
+    <image mode="widthFix" class="com-control-type" src="images/music.png"></image>
+    <view class="com-control-staus" bind:tap="onTogglePlay">
+      <image
+        class="comc-status-icon" 
+        mode="widthFix"
+        src="{{ isPlay ? play : pause }}"></image>
+    </view>
+  </view>
+  <view class="com-content">{{ data.content }}</view>
+</view>

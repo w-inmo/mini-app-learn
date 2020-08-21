@@ -1,0 +1,20 @@
+.books-search {
+  padding: 20rpx 40rpx;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .08);
+  background-color: #fff;
+}
+
+.books-search .bs-input-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 80rpx;
+  background-color: #f7f7f7;
+  border-radius: 40rpx;
+}
+
+.bs-input-wrap .bs-input-text {
+  font-size: 32rpx;
+  color: #9a9a9a;
+}

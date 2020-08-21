@@ -1,0 +1,84 @@
+.classic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.classic-header .ch-left {
+  width: 50%;
+  height: 44px;
+  position: relative;
+}
+
+.ch-left .ch-left-no {
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  line-height: 1;
+  font-size: 20px;
+  color: #666;
+}
+
+.ch-left .ch-left-day {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  line-height: 1;
+  font-size: 40px;
+}
+
+.ch-left .ch-left-line {
+  position: absolute;
+  left: 80px;
+  bottom: 2px;
+  width: 1px;
+  height: 30px;
+  background-color: #000;
+}
+
+.ch-left .ch-left-date {
+  position: absolute;
+  left: 90px;
+  bottom: 0;
+}
+
+.ch-left-date .ch-left-month,
+.ch-left-date .ch-left-year {
+  font-size: 14px;
+  line-height: 18px;
+  color: #666;
+}
+
+
+
+.ch-right {
+  display: flex;
+  align-items: center;
+}
+
+
+.ch-right .ch-right-share {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.ch-right .ch-right-live {
+  width: auto;
+  height: 20px;
+  position: relative;
+}
+
+.ch-right-live .ch-live-image {
+  width: 20px;
+  height: 20px;
+}
+
+.ch-right-live::after {
+  content: attr(data-count);
+  position: relative;
+  left: 2px;
+  top: -74%;
+  font-size: 12px;
+}

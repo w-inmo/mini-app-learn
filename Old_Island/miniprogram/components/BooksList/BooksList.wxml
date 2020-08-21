@@ -1,0 +1,33 @@
+<scroll-view scroll-y="true" class="books-list">
+  <view class="bl-title">
+    <image mode="widthFix" class="bl-title-image" src="images/choice.png"></image>
+  </view>
+  <view class="bl-container" wx:if="bookList">
+    <navigator 
+      url="/pages/detail/detail?id={{ item.id }}"
+      class="bl-item" 
+      wx:for="{{ bookList }}" 
+      wx:key="item">
+      <view class="item-cover-container">
+        <view class="item-cover-wrap">
+          <image mode="widthFix" lazy-load="true" class="item-cover" src="{{ item.image }}"></image>
+        </view>
+      </view>
+      <view class="bl-item-content">
+        <view class="bl-item-title bl-one-line">{{ item.title }}</view>
+        <view class="bl-item-author bl-one-line">{{ item.author }}</view>
+        <view class="bl-item-info">
+          <view class="bl-item-like">
+            <text>223</text>
+            <text> 喜欢</text>
+          </view>
+          <view>·</view>
+          <view class="bl-item-comment">
+            <text>68</text>
+            <text> 短评</text>
+          </view>  
+        </view>
+      </view>
+    </navigator>
+  </view>
+</scroll-view>

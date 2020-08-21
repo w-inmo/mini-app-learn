@@ -1,0 +1,14 @@
+<view class="classic" wx:if="{{ isData }}">
+  <classic-movie
+    wx:if="{{ classic.type === 100 }}" 
+    data="{{ classic }}"></classic-movie>
+  <classic-of-music
+    wx:elif="{{ classic.type === 200 }}"
+    data="{{ classic }}"></classic-of-music>
+  <classic-of-sentence 
+    wx:elif="{{ classic.type === 300 }}"
+    data="{{ classic }}"></classic-of-sentence>
+  <classic-control
+    bind:updateData="onUpdateData" 
+    data="{{ classic }}"></classic-control>
+</view>

@@ -1,0 +1,4 @@
+<view class="like">
+  <like-profile></like-profile>
+  <like-list></like-list>
+</view>
