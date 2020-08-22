@@ -1,0 +1,23 @@
+var format = function(str) {
+
+    if (!str) return ''
+
+    var strs = str.split(getRegExp('\\\\n', 'g'))
+    var res = []
+
+    for (var i = 0; i < strs.length; i++) res.push(strs[i])
+
+    return res
+}
+
+var limit = function(arr, length = 10) {
+
+    if (!arr) return
+
+    return arr.slice(0, length)
+}
+
+module.exports = {
+    format: format,
+    limit: limit
+}

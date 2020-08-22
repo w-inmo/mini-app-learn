@@ -14,9 +14,7 @@ class ClassicModel extends HTTP {
     }
 
     getClassic(index, previousOrNext, cb) {
-        const key = previousOrNext ==='next' ? 
-            this._getKey(index + 1) : this._getKey(index - 1)
-
+        const key = previousOrNext ==='next' ? this._getKey(index + 1) : this._getKey(index - 1)
         const classic = wx.getStorageSync(key)
 
         if (!classic) {

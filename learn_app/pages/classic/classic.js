@@ -1,8 +1,5 @@
-// pages/classic/classic.js
-
 const ClassicModel = require("../../models/classic")
 const LikeModel = require("../../models/like")
-const config = require("../../config")
 
 const classicModel = new ClassicModel()
 const likeModel = new LikeModel()

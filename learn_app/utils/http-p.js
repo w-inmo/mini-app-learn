@@ -10,7 +10,7 @@ const tips = {
 
 class HTTP {
 
-    request(url, data = {}, method = "GET") {
+    request({url, data = {}, method = "GET"}) {
         return new Promise((resolve, reject) => {
             this._request(url, resolve, reject, data, method)
         })
@@ -47,8 +47,10 @@ class HTTP {
 
         if (!errorCode) error_code = 1
 
+        const tip = tips[errorCode]
+
         wx.showToast({
-            title: tips[errorCode],
+            title: tip || tips[1],
             icon: 'none',
             duration: 2000 
         }) 
