@@ -1,4 +1,4 @@
-const HTTP = require("../utils/http")
+const HTTP = require("../utils/http-p")
 
 class LikeModel extends HTTP {
     like(behavior, artId, category) {
@@ -7,7 +7,6 @@ class LikeModel extends HTTP {
 
         this.request({
             url,
-            method: 'POST',
             data: {
                 art_id: artId,
                 type: category
@@ -15,11 +14,8 @@ class LikeModel extends HTTP {
         })
     }
 
-    getClassicLikeStatus(artId, category, cb) {
-        this.request({
-            url: `/classic/${category}/${artId}/favor`,
-            success: (res) => cb(res)
-        })
+    getClassicLikeStatus(artId, category) {
+        return this.request({ url: `/classic/${category}/${artId}/favor` })
     }
 }
 

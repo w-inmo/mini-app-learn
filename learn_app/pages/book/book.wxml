@@ -20,7 +20,7 @@
     bind:cancel="onCancel"
     bind:search="onSearch"
     bind:clear="onClear"
-    historyWords="{{ historyWords }}"
-    hotWords="{{ hotWords }}"
+    history-words="{{ historyWords }}"
+    hot-words="{{ hotWords }}"
     books="{{ searchData }}"
-    isLoading="{{ isLoading }}"></i-search>
+    is-loading="{{ isLoading }}"></i-search>

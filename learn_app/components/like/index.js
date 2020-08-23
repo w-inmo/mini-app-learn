@@ -2,7 +2,8 @@
 Component({
 	properties: {
 		isLike: Boolean,
-		count: Number
+        count: Number,
+        readOnly: Boolean
 	},
 	data: {
 		likeSrc: "images/like.png",
@@ -10,6 +11,8 @@ Component({
 	}, 
 	methods: {
 		onLike(event) {
+            if (this.properties.readOnly) return
+
 			let { count, isLike } = this.properties
 
 			// 如果是 true 状态点击

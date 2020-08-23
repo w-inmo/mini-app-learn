@@ -13,7 +13,7 @@ Page({
         likeCount: 0
     },
     onLoad() {
-        classicModel.getLatest((res) => {
+        classicModel.getLatest().then((res) => {
             this.setData({ 
                 classicData: res,
                 likeStatus: res.like_status,
@@ -33,21 +33,48 @@ Page({
     },
     _updateClassic(previousOrNext) {
         const index = this.data.classicData.index
-        classicModel.getClassic(index, previousOrNext, (res) => {
-            this._getLikeStatus(res.id, res.type)
-            this.setData({
-                classicData: res,
-                latest: classicModel.isLatest(res.index),
-                first: classicModel.isFirst(res.index)
+        const key = previousOrNext ==='next' ? this._getKey(index + 1) : this._getKey(index - 1)
+
+        const classic = wx.getStorageSync(key)
+
+        if (classic) {
+            this.saveData(classic)
+        }
+        else {
+            classicModel.getClassic(index, previousOrNext).then(res => {
+                wx.setStorageSync(this._getKey(res.index), res)
+                this.saveData(res)
             })
+        }
+    },
+
+    saveData(res) {
+        this._getLikeStatus(res.id, res.type)
+        this.setData({
+            classicData: res,
+            latest: classicModel.isLatest(res.index),
+            first: classicModel.isFirst(res.index)
         })
     },
+
     _getLikeStatus(artId, category) {
-        likeModel.getClassicLikeStatus(artId, category, (res) => {
+        likeModel.getClassicLikeStatus(artId, category).then((res) => {
             this.setData({
                 likeCount: res.fav_nums,
                 likeStatus: res.like_status
             })
         })
+    },
+
+    _getKey(index) {
+        return 'classic-' + index
+    },
+
+    _setLatestIndex(index) {
+        wx.setStorageSync('latest', index)
+    },
+
+    _getLatestIndex() {
+        return wx.getStorageSync('latest')
     },
 })

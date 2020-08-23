@@ -1,12 +1,19 @@
 <view class="container">
     <view class="header">
         <i-episode index="{{ classicData.index }}"></i-episode>
-        <i-like
-            bind:like="onLike"
-            isLike="{{ likeStatus }}" 
-            count="{{ likeCount }}"></i-like>
+        <view class="like-container">
+            <i-like
+                bind:like="onLike"
+                isLike="{{ likeStatus }}" 
+                count="{{ likeCount }}"></i-like>
+            <i-button
+                class="share-btn"
+                open-type="share">
+                <image class="share" src="images/share@icon.png" />
+            </i-button>
+        </view>
     </view>
-    <i-navi 
+    <i-navi
         class="navi" 
         bind:previous="onPrevious"
         bind:next="onNext"

@@ -1,34 +1,18 @@
-const HTTP = require("../utils/http")
+const HTTP = require("../utils/http-p")
 
 class ClassicModel extends HTTP {
-    getLatest(cb) {
-        this.request({
-            url: '/classic/latest',
-            method: "GET",
-            success: (res) => {
-                cb(res)
-                this._setLatestIndex(res.index)
-                wx.setStorageSync(this._getKey(res.index), res)
-            }
+    getLatest() {
+        return this.request({ url: '/classic/latest' })
+    }
+
+    getClassic(index, previousOrNext) {
+        return this.request({
+            url: `/classic/${index}/${previousOrNext}`,
         })
     }
 
-    getClassic(index, previousOrNext, cb) {
-        const key = previousOrNext ==='next' ? this._getKey(index + 1) : this._getKey(index - 1)
-        const classic = wx.getStorageSync(key)
-
-        if (!classic) {
-            this.request({
-                url: `/classic/${index}/${previousOrNext}`,
-                success: (res) => {
-                    cb(res)
-                    wx.setStorageSync(this._getKey(res.index), res)
-                }
-            })
-        }
-        else {
-            cb(classic)
-        }
+    getMyFavor() {
+        return this.request({ url: '/classic/favor' })
     }
 
     isFirst(index) {

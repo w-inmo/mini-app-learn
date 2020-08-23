@@ -14,7 +14,6 @@ class BookModel extends HTTP {
         })
     }
 
-
     getLikeStatus(bookId) {
         return this.request({
             url: `/book/${bookId}/favor`
@@ -35,6 +34,12 @@ class BookModel extends HTTP {
                 book_id: id,
                 content: comment                
             }
+        })
+    }
+
+    getLikeBookCount() {
+        return this.request({
+            url: '/book/favor/count'
         })
     }
 }

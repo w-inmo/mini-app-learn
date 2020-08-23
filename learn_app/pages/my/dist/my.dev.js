@@ -1,42 +1,78 @@
 "use strict";
 
-// pages/my/my.js
+var BookModel = require("../../models/book");
+
+var ClassicModel = require("../../models/classic");
+
+var bookModel = new BookModel();
+var classicModel = new ClassicModel();
 Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    authorized: false,
+    userInfo: {},
+    bookCount: 0,
+    classics: []
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function onLoad(options) {
     this.userAuthorized();
+    this.getMyBookCount();
+    this.getMyFavor();
   },
   userAuthorized: function userAuthorized() {
     wx.getSetting({
-      success: this._authorizedSuccess
+      success: this.authorizedSuccess.bind(this)
     });
   },
-  _authorizedSuccess: function _authorizedSuccess(res) {
+  authorizedSuccess: function authorizedSuccess(res) {
     if (res.authSetting['scope.userInfo']) {
-      this.getUserInfo();
-    } else {
-      console.log('User no authorization 用户没有授权!');
+      wx.getUserInfo({
+        success: this.successful.bind(this),
+        fail: this.failful
+      });
     }
   },
-  getUserInfo: function getUserInfo() {
-    wx.getUserInfo({
-      success: function success(res) {
-        console.log(res);
-      }
+  successful: function successful(res) {
+    this.setData({
+      authorized: true,
+      userInfo: res.userInfo
     });
   },
+  failful: function failful() {
+    console.log('User authorization fail 用户授权失败');
+  },
   onGetUserInfo: function onGetUserInfo(event) {
-    console.log(event); // wx.getUserInfo({
-    //     success(res) {
-    //         console.log(res)
-    //     }
-    // })
+    var userInfo = event.detail.userInfo;
+
+    if (userInfo) {
+      this.setData({
+        authorized: true,
+        userInfo: userInfo
+      });
+    }
+  },
+  getMyBookCount: function getMyBookCount() {
+    var _this = this;
+
+    bookModel.getLikeBookCount().then(function (res) {
+      _this.setData({
+        bookCount: res.count
+      });
+    });
+  },
+  getMyFavor: function getMyFavor() {
+    var _this2 = this;
+
+    classicModel.getMyFavor().then(function (res) {
+      _this2.setData({
+        classics: res
+      });
+    });
   }
 });
