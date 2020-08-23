@@ -12,5 +12,11 @@ Component({
      */
     properties: {
         text: String
+    },
+
+    methods: {
+        onTap() {
+            this.triggerEvent('tag', { text: this.properties.text })
+        }
     }
 })

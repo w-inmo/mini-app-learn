@@ -21,17 +21,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const id = options.id,
-            bookDetail = bookModel.getDetail(id),
-            like = bookModel.getLikeStatus(id),
-            bookComments = bookModel.getComments(id)
 
-        Promise.all([bookDetail, like, bookComments]).then(values => {
+        const id = options.id
+        
+        wx.showLoading({ title: "数据请求中" })
+
+        Promise.all([
+            bookModel.getBook(id),
+            bookModel.getLikeStatus(id),
+            bookModel.getComments(id)
+        ]).then(values => {
             this.setData({
                 book: values[0],
                 like: values[1],
-                comments: values[2]
+                comments: values[2].comments
             })
+
+            wx.hideLoading()
         })
     },
 
@@ -46,5 +52,35 @@ Page({
 
     onCancel() {
         this.setData({ posting: false })
+    },
+
+    onPost(event) {
+
+        const comment = event.detail.value || event.detail.text
+
+        if (!comment) return
+
+        if (comment.length > 12) {
+            wx.showToast({
+                title: "短评最多十二个字",
+                icon: 'none'
+            })
+
+            return
+        }
+
+        bookModel.postComment(this.data.book.id, comment).then(res => {
+            wx.showToast({
+                title: '短评添加成功',
+                icon: 'success'
+            })
+
+            this.data.comments.unshift({
+                content: comment,
+                nums: 1
+            })
+
+            this.setData({ comments: this.data.comments, posting: false })
+        })
     }
 })

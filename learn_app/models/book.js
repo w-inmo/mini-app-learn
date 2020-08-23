@@ -1,13 +1,14 @@
 const HTTP = require("../utils/http-p")
 
-class BookModel extends HTTP { 
+class BookModel extends HTTP {
+    
     getHotList() {
         return this.request({
             url: '/book/hot_list'
         })
     }
 
-    getDetail(bookId) {
+    getBook(bookId) {
         return this.request({
             url: `/book/${bookId}/detail`
         })
@@ -23,6 +24,17 @@ class BookModel extends HTTP {
     getComments(bookId) {
         return this.request({
             url: `/book/${bookId}/short_comment`
+        })
+    }
+
+    postComment(id, comment) {
+        return this.request({
+            url: '/book/add/short_comment',
+            method: "POST",
+            data: {
+                book_id: id,
+                content: comment                
+            }
         })
     }
 }

@@ -1,0 +1,51 @@
+<view class="container">
+    <view class="header">
+        <view class="search-container">
+            <image class="icon" src="images/search.png" />
+            <input 
+                class='bar' 
+                model:value="{{ value }}" 
+                bind:confirm="onConfirm" 
+                placeholder='书籍名' 
+                auto-focus="true" />
+            <image class="cancel-img" bind:tap="onClear" src="images/delete.png" />
+        </view>
+        <view bind:tap="onCancel" class='cancel'>取消</view>
+    </view>
+    <view hidden="{{ searching }}">
+        <view class="history">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>历史搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{ historyWords }}" wx:key="index">
+                    <i-tag bind:tag="onConfirm" bind:tapping="onConfirm" text="{{item}}" />
+                </block>
+            </view>
+        </view>
+        <view class="history hot-search">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>热门搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{ hotWords }}" wx:key="index">
+                    <i-tag bind:tag="onConfirm" bind:tapping="onConfirm" text="{{item}}" />
+                </block>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{ searching }}" class="books-container">
+        <block wx:for="{{ books }}" wx:key="id">
+            <i-book showLike="{{ false }}" book="{{ item }}" class="book" />
+        </block>
+    </view>
+
+    <!-- 加载数据中 -->
+    <i-loading class="loading-center" wx:if="{{ isRequesting }}"></i-loading>
+    <!-- 数据加载完成，并且还有更多的数据 -->
+    <i-loading class="loading-more" wx:elif="{{ isLoading }}"></i-loading>
+    <!-- 没有其他数据 -->
+    <view class="loaded-all" wx:else>{{ noneData ? '没有找到书籍' : '书籍已经全部加载完成' }}</view>
+</view>

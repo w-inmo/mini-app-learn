@@ -1,6 +1,6 @@
-<view class="container">
+<view hidden="{{ isShowSearchPage }}" class="container">
     <view class="header">
-        <view class="box">
+        <view class="box" bind:tap="onShowSearchPage">
             <image src="images/search.png" />
             <text>搜索书籍</text>
         </view>
@@ -15,3 +15,12 @@
     </view>
 </view>
 
+<i-search 
+    wx:if="{{ isShowSearchPage }}" 
+    bind:cancel="onCancel"
+    bind:search="onSearch"
+    bind:clear="onClear"
+    historyWords="{{ historyWords }}"
+    hotWords="{{ hotWords }}"
+    books="{{ searchData }}"
+    isLoading="{{ isLoading }}"></i-search>

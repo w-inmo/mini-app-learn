@@ -8,8 +8,9 @@
     </view>
     <view class="sub-container">
         <text class="headline">短评</text>
+        <text wx:if="{{ comments.length === 0 }}">暂无短评</text>
         <view class="comment-container">
-            <block wx:for="{{ utils.limit(comments.comments, 10) }}" wx:key="content">
+            <block wx:for="{{ utils.limit(comments, 10) }}" wx:key="content">
                 <i-tag tag-class="{{ tool.highlight(index) }}" text="{{ item.content }}">
                     <text class="nums" slot="after">{{ '+' + item.nums }}</text>
                 </i-tag>
@@ -61,17 +62,18 @@
 <view class="posting-container" hidden="{{ !posting }}">
     
     <view class="post-header">
-        <text>尽可点击标签 +1</text>
+        <text wx:if="{{ comments.length > 0 }}">仅可点击标签 +1</text>
+        <text wx:else>暂无短评</text>
         <text class="cancel" bind:tap="onCancel">取消</text>
     </view>
     <view class="comment-container">
-        <block wx:for="{{ utils.limit(comments.comments, 3) }}" wx:key="content">
-            <i-tag tag-class="{{ tool.highlight(index) }}" text="{{ item.content }}">
+        <block wx:for="{{ utils.limit(comments, 3) }}" wx:key="content">
+            <i-tag bind:tag="onPost" tag-class="{{ tool.highlight(index) }}" text="{{ item.content }}">
                 <text class="nums" slot="after">{{ '+' + item.nums }}</text>
             </i-tag>
         </block>
     </view>
-    <input class="post" type="text" placeholder="短评最多12个字" />
+    <input class="post" bind:confirm="onPost" type="text" placeholder="短评最多12个字" />
 </view>
 
 
