@@ -74,5 +74,10 @@ Page({
         classics: res
       });
     });
+  },
+  onJumpToDetail: function onJumpToDetail(event) {// const { cid, type } = event.detail
+    // wx.navigateTo({
+    //     url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
+    // })
   }
 });

@@ -13,14 +13,6 @@
             </i-button>
         </view>
     </view>
-    <i-navi
-        class="navi" 
-        bind:previous="onPrevious"
-        bind:next="onNext"
-        title="{{ classicData.title }}"
-        first="{{ first }}"
-        latest="{{ latest }}"></i-navi>
-
     <i-movie
         wx:if="{{ classicData.type === 100 }}"
         class="content"

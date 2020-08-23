@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "i-classic":"/pages/classic/classic"
+    }
+}

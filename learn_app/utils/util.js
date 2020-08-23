@@ -14,6 +14,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const promisic = (fn) => {
+  return function() {
+    return new Promise((resolve, reject) => {
+      
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime
 }

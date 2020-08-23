@@ -25,7 +25,7 @@ Page({
         this.getMyFavor()
     },
 
-    userAuthorized() {
+    async userAuthorized() {
         wx.getSetting({
             success: this.authorizedSuccess.bind(this)
         })
@@ -69,6 +69,14 @@ Page({
         classicModel.getMyFavor().then(res => {
             this.setData({ classics: res })
         })
-    }
+    },
+
+    onJumpToDetail(event){
+        // const { cid, type } = event.detail
+
+        // wx.navigateTo({
+        //     url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
+        // })
+    },
 
 })

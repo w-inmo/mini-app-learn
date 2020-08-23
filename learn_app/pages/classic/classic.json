@@ -6,6 +6,7 @@
     "i-essay": "/components/classic/essay/index",
     "i-episode": "/components/episode/index",
     "i-navi": "/components/navi/index",
-    "i-button": "/components/image-button/index"
+    "i-button": "/components/image-button/index",
+    "i-album": "/components/album/index"
   }
 }

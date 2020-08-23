@@ -1,5 +1,5 @@
 const baseURL = "http://bl.7yue.pro/v1"
-const appkey = "appkey=AbhC31IG7ruCDp57"
+const appkey = "none"
 
 function get(url, params = {}) {
 

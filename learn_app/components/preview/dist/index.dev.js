@@ -39,7 +39,7 @@ Component({
       this.triggerEvent('tapping', {
         cid: this.properties.classic.id,
         type: this.properties.classic.type
-      }, {});
+      });
     }
   }
 });
